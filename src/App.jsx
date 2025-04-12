@@ -18,7 +18,7 @@ function App() {
       <button onClick={handleClick} disabled={loading}>
         {loading ? "Wird gebacken..." : "Neue Pizza generieren"}
       </button>
-      {imageUrl && <img src={imageUrl} alt=\"Pizza\" style={{ marginTop: 20, borderRadius: '10px', maxWidth: 400 }} />}
+      {imageUrl && <img src={imageUrl} alt="Pizza" style={{ marginTop: 20, borderRadius: '10px', maxWidth: 400 }} />}
     </div>
   );
 }
