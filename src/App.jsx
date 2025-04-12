@@ -1,8 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
   const [imageUrl, setImageUrl] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
 
   const handleClick = async () => {
     setLoading(true);
@@ -48,7 +53,9 @@ function App() {
               boxShadow: "0 0 10px rgba(0,0,0,0.2)"
             }}
           />
+
           <br />
+
           <a
             href={imageUrl}
             download="meine-pizza.png"
@@ -64,6 +71,12 @@ function App() {
           >
             📥 Bild herunterladen
           </a>
+
+          {isMobile && (
+            <p style={{ fontSize: "0.9rem", color: "#666", marginTop: "0.5rem" }}>
+              📱 Tipp: Lange auf das Bild tippen und „In Fotos speichern“ wählen.
+            </p>
+          )}
         </>
       )}
     </div>
