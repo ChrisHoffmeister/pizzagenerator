@@ -8,9 +8,10 @@ export default async function handler(req, res) {
       "Authorization": `Bearer ${OpenAI_API_Key}`
     },
     body: JSON.stringify({
+      model: "dall-e-3",
       prompt: "a realistic, top-down pizza with delicious toppings, photorealistic",
       n: 1,
-      size: "512x512"
+      size: "1024x1024"
     })
   });
 
